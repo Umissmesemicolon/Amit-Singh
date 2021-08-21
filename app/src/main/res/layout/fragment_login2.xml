@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login_1"
+    android:background="@drawable/logo"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context=".Fragment.LoginFragment">
+
+    <EditText
+        android:id="@+id/edittext1"
+        android:layout_width="300dp"
+        android:layout_height="57dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="6dp"
+        android:fadeScrollbars="false"
+        android:hint="Username"
+        android:paddingStart="15dp"
+        android:textColor="#CACCDA"
+        android:textColorHint="#FF5722"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="301dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_lock_open_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:textColor="#D2D5E3"
+        android:textColorHint="#FF5722"
+        android:textColorLink="#FF5722"
+        android:textSize="24sp" />
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Remember Me"
+        android:layout_margin="20sp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="@color/black"
+        android:text="Login"
+        android:textSize="24sp"
+        android:textStyle="normal" />
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context=".Fragment.SignUp">
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="303dp"
+        android:layout_height="53dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:paddingStart="16dp"
+        android:textColor="#C1C6DD"
+        android:textColorHint="#FF5722"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="303dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_lock_open_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:textColor="#C3C6DA"
+        android:textColorHint="#FF5722"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword3"
+        android:layout_width="305dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_lock_open_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:textColor="#C0C3D8"
+        android:textColorHint="#FF5722"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="301dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:textColor="#BEC3DD"
+        android:textColorHint="#FF5722"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="307dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_rounded"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
+        android:drawablePadding="6dp"
+        android:ems="10"
+        android:hint="Date oF Birth"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonSi"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="@color/black"
+        android:text="Sign Up"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp" />
+
+</LinearLayout>
