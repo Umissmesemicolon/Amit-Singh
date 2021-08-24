@@ -3,6 +3,7 @@ package com.example.afinal.Fragment;
 import android.app.Activity;
 import android.content.Context;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
+import com.example.afinal.MainActivity;
 import com.example.afinal.R;
 
 public class CurrentUserlogin extends Fragment {
@@ -31,30 +33,22 @@ public class CurrentUserlogin extends Fragment {
         editor=sharedPreferences.edit();
         editor.clear();
         editor.apply();
-        // need to add a intent for splash
-        //getActivity().finish();
-        //((Activity) getContext()).finish();
-
-
-      button=getView().findViewById(R.id.logout);
+        View view = inflater.inflate(R.layout.fragment_current_userlogin, container, false);
+        button=view.findViewById(R.id.logout);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginFragment loginFragment=new LoginFragment();
-                FragmentTransaction transaction= getFragmentManager().beginTransaction();;
-                transaction.replace(R.id.login_1,loginFragment);
-                transaction.commit();
+                goToAttract(v);
             }
         });
-
-
-
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_current_userlogin, container, false);
         return view;
 
 
     }
-
+    public void goToAttract(View v)
+    {
+        Intent intent = new Intent(getActivity().getApplication(), MainActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -37,99 +37,80 @@ DataBaseclss database;
     EditText editText;
     EditText editText1;
     CheckBox checkBox;
-    String name="admin";
-    String password="admin";
+    String Username, Password;
+
     SharedPreferences sh;
     SharedPreferences.Editor editor;
-    boolean isLoggedIn;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login2, container, false);
+        View view =  inflater.inflate(R.layout.fragment_login2, container, false);
 
-        loginbtn=view.findViewById(R.id.button2);
-        editText=view.findViewById(R.id.editTextTextPassword2);
-        editText1=view.findViewById(R.id.edittext1);
-        checkBox=view.findViewById(R.id.checkbox);
-        sh= getActivity().getSharedPreferences("DATA", Context.MODE_PRIVATE);
-        editor=sh.edit();
-        editText.setText(sh.getString("N",""));
-        editText1.setText(sh.getString("P",""));
-        isLoggedIn= sh.getBoolean("IsLOGGEDIN",false);
-        if (isLoggedIn)
-        {
-            Bundle bundle=new Bundle();
-            bundle.putString("key",editText.getText().toString());
-            CurrentUserlogin currentUserlogin = new CurrentUserlogin();
-            FragmentTransaction transaction= getFragmentManager().beginTransaction();;
-            transaction.replace(R.id.linearlayoutfirst,currentUserlogin);
-            transaction.commit();
-        }
+        list = new ArrayList<>();
+        editText = view.findViewById(R.id.edittext1);
+        editText1 = view.findViewById(R.id.editTextTextPassword2);
+        loginbtn = view.findViewById(R.id.button2);
         database=DataBaseclss.getInstance(getContext());
-        list=new ArrayList<>();
 
-               /** loginbtn.setOnClickListener(new View.OnClickListener() {
+
+        sh = requireContext().getSharedPreferences("Data", Context.MODE_PRIVATE);
+        editor =  sh.edit();
+
+
+        loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        list=database.getDao().getAllUserinfos();
-                        for (UserInfo ob : list)
-                        {
-                            //if
 
-                            new Handler(Looper.getMainLooper()).post(new Runnable() {
-                                @Override
-                                public void run() {
+                Username  =  editText.getText().toString();
+                Password = editText1.getText().toString();
 
-                                    Toast.makeText(getContext(), ob.getEmail(), Toast.LENGTH_SHORT).show();
-                                }
-                            });
 
+                if (Username.isEmpty() || Password.isEmpty()){
+                    Toast.makeText(getContext(), "Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                }else{
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            UserInfo userInfo =database.getDao().login(Username, Password);
+
+                            if (userInfo.getUsername().equals(Username)
+                                    &&  userInfo.getPassword().equals(Password)){
+
+                                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                    @Override
+                                    public void run() {
+
+                                        editor.putString("Logged_user", userInfo.getUsername());
+                                        editor.putString("Looged_email", userInfo.getEmail());
+                                        editor.apply();
+                                        Toast.makeText(getContext(), "Logged in With : " + userInfo.getUsername(), Toast.LENGTH_SHORT).show();
+                                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linearlayoutfirst,  new CurrentUserlogin()).commit();
+                                    }
+                                });
+
+                            }
+                            else{
+
+                            }
 
                         }
-                    }
-                }).start();
+                    }).start();
+                }
+
+
+
             }
-        });**/
 
-       loginbtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
 
-               String username=editText.getText().toString();
-               String password=editText1.getText().toString();
-               if (username.equals(name) && password.equals(password)){
-                   if (checkBox.isChecked()){
-                       editor.putString("N",username);
-                       editor.putString("P",password);
-                       editor.putBoolean("IsLOGGEDIN",true);
-                       editor.apply();
-                       Bundle bundle=new Bundle();
-                       bundle.putString("key",editText.getText().toString());
-                       CurrentUserlogin currentUserlogin = new CurrentUserlogin();
-                       FragmentTransaction transaction= getFragmentManager().beginTransaction();;
-                       transaction.replace(R.id.linearlayoutfirst,currentUserlogin);
-                       transaction.commit();
-                   }
-                   else {
-                       Bundle bundle=new Bundle();
-                       bundle.putString("key",editText.getText().toString());
-                       CurrentUserlogin currentUserlogin = new CurrentUserlogin();
-                       FragmentTransaction transaction= getFragmentManager().beginTransaction();;
-                       transaction.replace(R.id.linearlayoutfirst,currentUserlogin);
-                       transaction.commit();
-                   }
 
-               }else {
-                   Toast.makeText(getContext(), "invalid", Toast.LENGTH_SHORT).show();
-               }
+        });
 
-           }
-       });
-     return view;
+
+        return view;
     }
 }

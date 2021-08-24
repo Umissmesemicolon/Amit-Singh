@@ -12,7 +12,7 @@ public abstract class DataBaseclss extends RoomDatabase {
     public abstract DetailDao getDao();
 
     private static volatile DataBaseclss INSTANCE;
-   public  static  DataBaseclss getInstance(Context context){
+    public  static  DataBaseclss getInstance(Context context){
         if (INSTANCE == null){
             synchronized (Database.class){
                 if (INSTANCE==null){

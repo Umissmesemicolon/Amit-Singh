@@ -21,6 +21,7 @@ import com.example.afinal.R;
 import com.example.afinal.UserInfo;
 
 import java.text.SimpleDateFormat;
+import java.time.Year;
 import java.util.Calendar;
 
 
@@ -52,6 +53,9 @@ DataBaseclss database;
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        calendar.set(Calendar.YEAR,year);
+                        calendar.set(Calendar.MONTH,month);
+                        calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
                     date.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
@@ -70,7 +74,7 @@ DataBaseclss database;
                     public void run() {
                         UserInfo userInfo = new UserInfo();
                         userInfo.setUsername(username.getText().toString());
-                        userInfo.setPassword(Integer.parseInt(password.getText().toString()));
+                        userInfo.setPassword(password.getText().toString());
                         userInfo.setEmail(email.getText().toString());
                         database.getDao().insertUserDetails(userInfo);
                         new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -86,6 +90,7 @@ DataBaseclss database;
 
             }
         });
+
         return view;
     }
 }

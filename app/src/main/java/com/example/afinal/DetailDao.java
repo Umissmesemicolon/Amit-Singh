@@ -7,6 +7,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
+
 @Dao
 public interface DetailDao {
     @Insert
@@ -16,10 +17,10 @@ public interface DetailDao {
     @Query("Select * From Users")
     List<UserInfo> getAllUserinfos();
 
-    @Delete
-    void delete(UserInfo userInfo);
+    @Query("Select * From Users where Username=(:username) and  Password =(:password)")
+    UserInfo login (String username, String password);
 
 
 
 
-}
+    }
