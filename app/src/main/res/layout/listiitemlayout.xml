@@ -42,14 +42,17 @@
         app:layout_constraintStart_toEndOf="@+id/img_View" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="48dp"
-        android:layout_height="79dp"
-        app:layout_constraintBottom_toBottomOf="@+id/deslist"
+        android:id="@+id/deletebtn"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/deslist"
-        app:layout_constraintTop_toBottomOf="@+id/titlelist"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

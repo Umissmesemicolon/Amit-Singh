@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/buttonlogin"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="Login"
+        />
+    <item android:id="@+id/buttonsignup"
+        android:icon="@drawable/ic_baseline_person_add_alt_1_24"
+        android:title="Sign Up"
+        />
+    <item android:id="@+id/buttonuser"
+        android:icon="@drawable/ic_baseline_users"
+        android:title="User List"
+        />
+    <item android:id="@+id/buttonrtro"
+        android:icon="@drawable/ic_baseline_store_24"
+        android:title="Retrofit"
+        />
+
+</menu>

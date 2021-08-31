@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/login_1"
-    android:background="@drawable/logo"
+    android:background="@color/black"
     android:orientation="vertical"
     android:padding="50dp"
     tools:context=".Fragment.LoginFragment">
@@ -39,14 +39,15 @@
         android:textColorHint="#FF5722"
         android:textColorLink="#FF5722"
         android:textSize="24sp" />
+
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Remember Me"
         android:layout_margin="20sp"
-        android:textColor="@color/white"/>
+        android:text="Remember Me"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button2"

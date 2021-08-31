@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B021C"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <Button
+    <!--<Button
         android:id="@+id/buttonsignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="8dp"
         android:background="#FFEB3B"
         android:text="Sign Up"
         android:textColor="#020A13"
@@ -24,23 +20,23 @@
 
     <Button
         android:id="@+id/buttonuser"
-        android:layout_width="126dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="#FFEB3B"
         android:text="User"
         android:textColor="#01060C"
+        android:textCursorDrawable="@drawable/text_rounded"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonsignup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toEndOf="@+id/buttonsignup" />
 
     <Button
         android:id="@+id/buttonlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:layout_weight="1"
         android:background="#FFEB3B"
@@ -50,14 +46,15 @@
         android:textColorLink="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+-->
     <LinearLayout
         android:id="@+id/linearlayoutfirst"
-        android:layout_width="405dp"
-        android:layout_height="623dp"
+        android:layout_width="match_parent"
+        android:layout_height="667dp"
+        android:layout_above="@+id/bottonbtn"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/buttonlogin"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,4 +63,28 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  <!--  <Button
+        android:id="@+id/buttonrtro"
+        android:layout_width="106dp"
+        android:layout_height="62dp"
+        android:drawingCacheQuality="auto"
+        android:text="Retrofit"
+        android:textColor="#0C0C0C"
+        android:textCursorDrawable="@drawable/button_rounded"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toEndOf="@+id/buttonuser" />-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottonbtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+
+
+
+        app:menu="@menu/main_menu" />
+</RelativeLayout>

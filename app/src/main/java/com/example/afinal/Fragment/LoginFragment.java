@@ -31,9 +31,9 @@ public class LoginFragment extends Fragment {
     public LoginFragment() {
         // Required empty public constructor
     }
-Button loginbtn;
+    Button loginbtn;
     List<UserInfo> list;
-DataBaseclss database;
+    DataBaseclss database;
     EditText editText;
     EditText editText1;
     CheckBox checkBox;
