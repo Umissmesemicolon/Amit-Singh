@@ -18,5 +18,10 @@
         android:icon="@drawable/ic_baseline_store_24"
         android:title="Retrofit"
         />
+    <item android:id="@+id/dataBinding"
+        android:icon="@drawable/ic_baseline_store_24"
+        android:title="DataBinding"
+        />
+
 
 </menu>

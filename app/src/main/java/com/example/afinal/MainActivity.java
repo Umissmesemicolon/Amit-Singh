@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                   break;
                   case R.id.buttonrtro:temp=new FragmentRetrofit();
                   break;
+                  case R.id.dataBinding:temp=new FragmentBindData();
+                  break;
               }
               getSupportFragmentManager().beginTransaction().replace(R.id.linearlayoutfirst,temp).commit();
           }

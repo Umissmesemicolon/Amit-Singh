@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.afinal.DataBaseclss;
 import com.example.afinal.R;
@@ -47,7 +46,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_login2, container, false);
+        View view =  inflater.inflate(R.layout.fragment_login, container, false);
 
         list = new ArrayList<>();
         editText = view.findViewById(R.id.edittext1);

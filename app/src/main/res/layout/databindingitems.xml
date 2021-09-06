@@ -1,0 +1,61 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.afinal.DataBindingUser" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="20dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:id="@+id/databindingname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:text="@{user.name}"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!--android:layout_toEndOf="@+id/databindingimageView"-->
+
+
+            <TextView
+                android:id="@+id/databindingage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/databindingname"
+                android:layout_marginStart="8dp"
+                android:text="@{String.valueOf(user.age)}"
+                android:textSize="15sp" />
+            <!--android:layout_toEndOf="@+id/databindingimageView"-->
+
+
+            <Button
+                android:id="@+id/databindingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/databindingage"
+
+                android:enabled="@{user.active}"
+                android:text="@{user.active?`Active`:`NotActive`}"
+                app:backgroundTint="@color/purple_500" />
+            <!--  android:layout_toEndOf="@id/databindingimageView"-->
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
